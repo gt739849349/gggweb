@@ -2,248 +2,263 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>XX科技｜专业解决方案提供商</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>专业公司品牌官网</title>
     <style>
+        /* 全局样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
 
         body {
-            color: #1f2937;
-            background-color: #ffffff;
             line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* 顶部导航 */
-        header {
-            width: 100%;
-            border-bottom: 1px solid #e5e7eb;
-            background: #fff;
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        /* 导航栏 */
+        nav {
+            background: #ffffff;
+            height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 10%;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
             letter-spacing: 1px;
         }
 
-        .nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
-            gap: 30px;
+            list-style: none;
         }
 
-        .nav li {
-            font-size: 15px;
-            color: #374151;
+        .nav-links li {
+            margin-left: 30px;
         }
 
-        .nav li:hover {
-            color: #111827;
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            transition: color 0.3s;
         }
 
-        /* 首屏 */
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* 巨幕展示区 (Hero Section) */
         .hero {
-            padding: 120px 20px;
-            background: linear-gradient(180deg, #f9fafb, #ffffff);
-        }
-
-        .hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 48px;
-            font-weight: 700;
-            max-width: 700px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #4b5563;
+            font-size: 20px;
+            margin-bottom: 30px;
             max-width: 600px;
+            font-weight: 300;
         }
 
-        .hero-btn {
-            margin-top: 20px;
+        .btn {
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        .hero-btn a {
-            display: inline-block;
-            padding: 14px 36px;
-            background: #111827;
-            color: #fff;
-            border-radius: 6px;
-            font-size: 16px;
+        .btn:hover {
+            background: #2980b9;
         }
 
-        .hero-btn a:hover {
-            background: #000;
-        }
-
-        /* 服务模块 */
-        .section {
-            padding: 100px 20px;
-        }
-
-        .section-inner {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* 服务/特点区域 */
+        .services {
+            padding: 80px 10%;
+            text-align: center;
+            background: white;
         }
 
         .section-title {
-            font-size: 32px;
-            font-weight: 600;
             margin-bottom: 50px;
-            text-align: center;
         }
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+        .section-title h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 10px;
         }
 
-        .service {
-            padding: 40px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .service:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .service h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .service p {
-            font-size: 15px;
-            color: #6b7280;
-        }
-
-        /* 底部 */
-        footer {
-            background: #111827;
-            color: #9ca3af;
-            padding: 40px 20px;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
+        .section-title .underline {
+            width: 50px;
+            height: 3px;
+            background: #3498db;
             margin: 0 auto;
-            text-align: center;
-            font-size: 14px;
         }
 
-        @media (max-width: 900px) {
-            .services {
-                grid-template-columns: 1fr;
-            }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
 
-            .hero h1 {
-                font-size: 36px;
-            }
+        .card {
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 10% 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        .copyright {
+            border-top: 1px solid #3e4f5f;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #95a5a6;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
         }
     </style>
 </head>
-
 <body>
 
-<!-- 顶部导航 -->
-<header>
-    <div class="nav">
-        <div class="logo">XX科技</div>
-        <ul>
+    <nav>
+        <div class="logo">FUTURE TECH</div>
+        <ul class="nav-links">
             <li><a href="#">首页</a></li>
-            <li><a href="#">服务</a></li>
-            <li><a href="#">案例</a></li>
+            <li><a href="#">产品服务</a></li>
             <li><a href="#">关于我们</a></li>
+            <li><a href="#">案例展示</a></li>
             <li><a href="#">联系我们</a></li>
         </ul>
-    </div>
-</header>
+    </nav>
 
-<!-- 首屏 -->
-<section class="hero">
-    <div class="hero-inner">
-        <h1>为企业提供稳定、可靠、可持续的数字化解决方案</h1>
-        <p>
-            我们专注于高质量的网站设计、系统开发与品牌数字化建设，
-            帮助企业提升效率，建立长期竞争力。
-        </p>
-        <div class="hero-btn">
-            <a href="#">立即咨询</a>
+    <header class="hero">
+        <h1>引领未来的科技创新</h1>
+        <p>我们提供最前沿的数字化转型方案，助力您的企业在数字时代脱颖而出。</p>
+        <a href="#" class="btn">立即开启</a>
+    </header>
+
+    <section class="services">
+        <div class="section-title">
+            <h2>核心服务</h2>
+            <div class="underline"></div>
         </div>
-    </div>
-</section>
-
-<!-- 服务 -->
-<section class="section">
-    <div class="section-inner">
-        <div class="section-title">我们的服务</div>
-
-        <div class="services">
-            <div class="service">
-                <h3>网站设计与开发</h3>
-                <p>
-                    高端定制官网、企业站、电商站，注重体验与转化，
-                    让设计真正服务于业务。
-                </p>
+        <div class="grid">
+            <div class="card">
+                <h3>策略咨询</h3>
+                <p>深度的市场洞察与商业策略分析，为您指明增长路径。</p>
             </div>
-
-            <div class="service">
-                <h3>系统与平台建设</h3>
-                <p>
-                    根据业务需求定制后台系统、管理平台，
-                    提升运营效率，减少人力成本。
-                </p>
+            <div class="card">
+                <h3>数字开发</h3>
+                <p>高性能的网站与移动端开发，打造极致的用户体验。</p>
             </div>
-
-            <div class="service">
-                <h3>品牌与数字化升级</h3>
-                <p>
-                    从视觉到产品，从线上到线下，
-                    帮助企业完成数字化转型与品牌升级。
-                </p>
+            <div class="card">
+                <h3>品牌设计</h3>
+                <p>专业的视觉设计，赋予您的品牌独特的灵魂与温度。</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 底部 -->
-<footer>
-    <div class="footer-inner">
-        © 2025 XX科技有限公司 ｜ 保留所有权利
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>关于我们</h4>
+                <p>FUTURE TECH 是一家致力于技术创新和设计美学的互联网公司，成立于2020年。</p>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>邮箱：contact@futuretech.com</p>
+                <p>地址：上海市浦东新区张江高科技园区</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FUTURE TECH. 保留所有权利。
+        </div>
+    </footer>
 
 </body>
 </html>
